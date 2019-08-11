@@ -1,0 +1,227 @@
+%
+% LaTeX source of my resume
+% =========================
+%
+% Heavily commented to to fit even LaTeX beginners (hopefully).
+%
+% See the `README.md` file for more info.
+%
+% This file is licensed under the CC-NC-ND Creative Commons license.
+%
+
+% Start a document with the here given default font size and paper size.
+\documentclass[10pt,a4paper]{article}
+
+% Set the page margins.
+\usepackage[a4paper,margin=0.75in]{geometry}
+
+% Setup the language.
+\usepackage[english]{babel}
+\hyphenation{Some-long-word}
+
+% Makes resume-specific commands available.
+\usepackage{resume}
+
+\begin{document}  % begin the content of the document
+\sloppy  % this to relax whitespacing in favour of straight margins
+
+% title on top of the document
+\maintitle{Tzu-Chiao Yeh}{Last update on \today}
+
+\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+
+% \noindent prevents paragraph's first lines from indenting
+% \mbox is used to obfuscate the email address
+% \sbull is a spaced bullet
+% \href well..
+% \\ breaks the line into a new paragraph
+\noindent\href{mailto:su3g4284zo6y7@gmail.com}{su3g4284zo6y7\mbox{}@\mbox{}gmail.com}\sbull
+\textsmaller{+}886-930825802\sbull
+\href{https://tz70s.github.io}{tz70s.github.io}\sbull
+\href{https://github.com/tz70s}{github.com/tz70s}\sbull
+Taipei\sbull
+Taiwan
+%\\
+%Taipei\sbull
+%Taiwan
+\spacedhrule{0.9em}{-0.4em}  % a horizontal line with some vertical spacing before and after
+
+% \roottitle{Summary}  % a root section title
+
+% \vspace{-1.3em}  % some vertical spacing
+% \begin{multicols}{2}  % open a multicolumn environment
+% \noindent
+% \textbf{Software Engineer} particularly interested in distributed system, programming language (FP), and software infrastructure.
+% Prolific open-sourcer with over 100 Github repos and patches accepted into over 20 projects.
+% Passionate learner and researcher for cutting-edge technologies and solving hard problems.
+% \end{multicols}
+
+% \spacedhrule{0em}{-0.4em}
+
+\roottitle{Experience}
+
+\vspace{0.2em}
+
+\headedsection  % sets the header for the section and includes any subsections
+  {University of Washington}
+  {\textsc{Seattle, WA, USA}} {
+  \vspace{0.2em}
+  \headedsubsection
+    {Visiting Student in IPL Lab (ECE)}
+    {May \apo1 -- July \apo25}
+    {\bodytext{
+      \vspace{0.2em}
+      Research on programming language and distributed system 
+      issues in machine learning/deep learning area.
+    }}
+}
+
+\vspace{0.2em}
+
+\headedsection  % sets the header for the section and includes any subsections
+  {\href{https://summerofcode.withgoogle.com/archive/2018/projects/5211013825691648/}{Apache Software Foundation}}
+  {\textsc{Remote}} {%
+  \vspace{0.2em}
+  \headedsubsection
+    {Google Summer of Code Intern}
+    {May \apo18 -- Aug \apo18}
+    {\bodytext{
+    \vspace{0.2em}
+    Working on Apache OpenWhisk by joining the design and implementing a new scheduler to avoid hot-path bottleneck and better resource usage with 3x performance gained.
+    The technical stack was based on Scala, Akka, Kafka, CouchDB, Ansible, Docker and Kubernetes, etc.}}
+}
+
+\vspace{0.7em}
+
+\spacedhrule{0em}{-0.4em}
+
+\roottitle{Education}
+
+\vspace{0.2em}
+
+\headedsection
+  {\href{https://www.ntu.edu.tw}{National Taiwan University}}
+  {\textsc{Taipei, Taiwan}} {%
+  \headedsubsection
+    {Master degree in Electrical Engineering, Computer Science Program}
+    {2016 -- 2019}
+    {\bodytext{
+      \vspace{0.2em}
+      Research on distributed programming model and framework design for edge/cloud computing and IoT.}}
+    \headedsubsection
+    {Thesis: A Framework for Building Reactive Applications in Edge Computing}{}{}
+}
+
+\vspace{0.2em}
+
+\headedsection
+  {\href{https://web.ncku.edu.tw}{National Cheng Kung University}}
+  {\textsc{Tainan, Taiwan}} {%
+  \headedsubsection
+    {Bachelor degree in Computer Science and Information Engineering}
+    {2011 -- 2016 (dropout)}
+    {\bodytext{
+      \vspace{0.2em}
+      Earned a honorable mention of senior independent study, an interactive data visualization system based on Bootstrap, Jquery, D3.js and Flask for Spotify artists recommendation.
+    }}
+}
+
+\vspace{0.7em}
+
+\spacedhrule{0em}{-0.4em}
+
+\roottitle{Skills}
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {Programming Languages:}
+  {Proficient in Scala, Haskell, Java, Go, Rust and many other prior-experienced.}
+
+\vspace{0.2em}
+
+\inlineheadsection  % special section that has an inline header with a 'hanging' paragraph
+  {Specialties:}
+  {Distributed System, Functional Programming, Web Backend, Software Infrastructure.}
+
+\vspace{0.2em}
+\inlineheadsection
+  {Tools \& Frameworks:}
+  {Akka Toolkit, Play Framework, Cats, Cats-Effect, Fs2, gRPC, ScalaTest, Junit, Jmh, MySQL, Redis, Etcd, Kafka, Spark, OpenWhisk, Kubernetes, Docker, Travis CI, Git, GCP.}
+
+\spacedhrule{1.6em}{-0.4em}
+
+\roottitle{Selected Projects}
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {\href{https://github.com/tz70s/reactive-tomato}{Reactive Tomato}:}
+  {Distributed reactive programming framework in Haskell designed for decentralized and unreliable environment.
+  The reactive abstractions are based on Pipes monad transformer and Redis for intra-cluster event propagation. }
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {\href{https://github.com/tz70s/gpuflow}{GPUFlow}:}
+  {GPU accelerated network packet processing (L3 routing in LPM trie search) based on Intel DPDK and Nvidia CUDA for 
+  kernel bypassing networking and GPU memory latency hiding.}
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {\href{https://github.com/tz70s/pars}{Pars}:}
+  {Distributed framework for Fs2 based monadic stream processing with configurable replication based on decentralized deployment model and custom coordinator and scheduler.}
+
+\spacedhrule{1.6em}{-0.4em}
+
+\roottitle{OSS Experience}
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {\href{https://github.com/apache/incubator-openwhisk/commits/master?author=tz70s}{Apache OpenWhisk}:}
+  {Contributing to experimental scheduler performance improvement and minor fixes on distributed tracing, 
+  refactoring and build system, etc.}
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {Akka Toolkit:}
+  {Contributing to \href{https://github.com/akka/akka/commits/master?author=tz70s}{Akka} and \href{https://github.com/akka/akka-grpc/commits/master?author=tz70s}{Akka gRPC}.}
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {Over 100+ repos and OSS contributions (20+ projects) can be found on my \href{https://github.com/tz70s}{Github page}.}
+
+\spacedhrule{1.6em}{-0.4em}
+
+\roottitle{Publication}
+
+\vspace{0.2em}
+
+\inlineheadsection
+  {Tzu-Chiao Yeh,}
+  {Yung-Li Hu, Yennun Huang, Sy-Yen Kuo, \emph{"
+  Fog Emulator: An Emulator Toolkit for Application Development on Fog Computing based on Containerization Technology,"} Taiwan Conference on Software Engineering, 2018}
+
+\vspace{0.2em}
+
+\spacedhrule{1.6em}{-0.4em}
+
+% \roottitle{Talks}
+
+% \vspace{0.2em}
+
+% \inlineheadsection
+%   {A Serverless Framework for Event-driven Application Development on Edge Computing}
+%   {in 28th CJK Workshop, KAIST, Korea, May 24-26, 2018.}
+
+% \vspace{0.2em}
+
+% \inlineheadsection
+%   {A Design of Container-based Emulator for Fog Computing}
+%   {in 26th CJK Workshop, NTUST, Taiwan, May 22-24, 2017.}
+
+\end{document}
